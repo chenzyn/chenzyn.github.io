@@ -12,7 +12,7 @@ title                    : "Zeyuan Chen"
 title_separator          : "-"
 name                     : &name "Zeyuan Chen"
 description              : &description "personal description"
-url                      : https://chenzyn.io
+url                      : "https://chenzyn.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "chenzyn/chenzyn.github.io"
 
