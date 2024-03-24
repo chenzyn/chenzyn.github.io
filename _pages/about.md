@@ -7,4 +7,4 @@ redirect_from:
   - /about.html
 ---
 
-I'm Zeyuan Chen, a first-year graduate student at [School of Software and Microelectronics](https://www.ss.pku.edu.cn/?view=featured), Peking University. I am also a research intern at [Center On Frontiers of Computing Studies](https://cfcs.pku.edu.cn), Peking University.
+I'm Zeyuan Chen, a first-year graduate student at [School of Software and Microelectronics](https://www.ss.pku.edu.cn/?view=featured), Peking University. I am also a research intern at [Center On Frontiers of Computing Studies](https://cfcs.pku.edu.cn), Peking University. I work on robotics and embodied AI.
