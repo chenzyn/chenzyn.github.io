@@ -12,6 +12,4 @@ redirect_from:
 **Some Demo**
 =======
 
-<video id="video" controls="" preload="none" poster="">
-      <source id="mp4" src="/images/demo_1.mp4" type="video/mp4">
-</video>
+<video src="/images/demo_1.mp4"> </video>
