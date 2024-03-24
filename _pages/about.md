@@ -12,4 +12,7 @@ redirect_from:
 **Some Demo**
 =======
 
-<video src="/images/demo_1.mp4"> </video>
+<video width="320" height="240" controls>
+  <source src="/images/demo_1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
