@@ -14,7 +14,7 @@ redirect_from:
 
 Mapping [AnyGrasp](https://github.com/graspnet/anygrasp_sdk) para-gripper grasp pose to dexterous hand.
 
-<video width="320" height="240" controls>
+<video width="240" height="400" controls>
   <source src="/images/demo_1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
