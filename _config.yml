@@ -21,7 +21,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "me.jpg"
+  avatar           : "me.JPG"
   name             : "Zeyuan Chen"
   pronouns         : "he/him"  
   bio              : "I'm Zeyuan Chen, a first-year graduate student at Peking University's School of Software and Microelectronics. My passion lies in the field of robotics."
