@@ -11,7 +11,7 @@ redirect_from:
 
 
 
-**My work and reasearch**
+My work and reasearch
 =======
 
 Mapping [AnyGrasp](https://github.com/graspnet/anygrasp_sdk) para-gripper grasp pose to dexterous hand.
