@@ -50,3 +50,8 @@ ShadowHand rendering.
 -------
 ![](/images/shadowhand_render.png)
 
+Grasping in confined clutter
+-------
+
+Coming soon.
+
