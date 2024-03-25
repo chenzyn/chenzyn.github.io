@@ -44,4 +44,6 @@ Real-world experiment of functional pre-grasp manipulation.
   </div>
 </div>
 
+ShadowHand rendering.
+![](/images/shadowhand_render.png)
 
