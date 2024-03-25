@@ -21,4 +21,27 @@ Mapping [AnyGrasp](https://github.com/graspnet/anygrasp_sdk) para-gripper grasp 
   </video>
 </div>
 
+Real-world experiment of functional pre-grasp manipulation.
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <div style="flex-basis: calc(33.33% - 20px); margin: 10px;">
+    <video width="240" height="400" controls preload="auto">
+      <source src="/images/demo_fpm_1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style="flex-basis: calc(33.33% - 20px); margin: 10px;">
+    <video width="240" height="400" controls preload="auto">
+      <source src="/images/demo_fpm_2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style="flex-basis: calc(33.33% - 20px); margin: 10px;">
+    <video width="240" height="400" controls preload="auto">
+      <source src="/images/demo_fpm_3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
 
