@@ -10,7 +10,7 @@
 locale                   : "en-US"
 title                    : "Zeyuan Chen"
 title_separator          : "-"
-name                     : &name "Zeyuan Chen"
+name                     : &name "陈泽源"
 description              : &description "personal description"
 url                      : https://chenzyn.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
