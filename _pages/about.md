@@ -13,6 +13,7 @@ redirect_from:
 =======
 
 Mapping [AnyGrasp](https://github.com/graspnet/anygrasp_sdk) para-gripper grasp pose to dexterous hand.
+-------
 
 <div style="display: flex; justify-content: center; align-items: center; height: 400px;">
   <video width="240" height="400" controls preload="auto">
@@ -22,6 +23,7 @@ Mapping [AnyGrasp](https://github.com/graspnet/anygrasp_sdk) para-gripper grasp 
 </div>
 
 Real-world experiment of functional pre-grasp manipulation.
+-------
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; width: 100%;">
   <div style="flex-basis: calc(33.33% - 20px); margin: 10px;">
@@ -45,5 +47,6 @@ Real-world experiment of functional pre-grasp manipulation.
 </div>
 
 ShadowHand rendering.
+-------
 ![](/images/shadowhand_render.png)
 
