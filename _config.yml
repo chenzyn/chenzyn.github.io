@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Zeyuan Chen"
+title                    : "陈泽源"
 title_separator          : "-"
-name                     : &name "陈泽源"
+name                     : &name "Zeyuan Chen"
 description              : &description "personal description"
 url                      : https://chenzyn.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
