@@ -23,7 +23,7 @@ Mapping [AnyGrasp](https://github.com/graspnet/anygrasp_sdk) para-gripper grasp 
 
 Real-world experiment of functional pre-grasp manipulation.
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; width: 100%;">
   <div style="flex-basis: calc(33.33% - 20px); margin: 10px;">
     <video width="240" height="400" controls preload="auto">
       <source src="/images/demo_fpm_1.mp4" type="video/mp4">
