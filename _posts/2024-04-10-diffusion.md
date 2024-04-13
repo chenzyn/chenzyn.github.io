@@ -36,7 +36,7 @@ Diffusion 的**后向过程**：
 
 <img src="/images/diffusion_4.png" width="500">
 
-说白了，Diffusion Model的目的就是学习如何基于第t步的条件（$x_t$, t）生成 `t` 步的 噪声 $\epsilon_t$
+说白了，Diffusion Model的目的就是学习如何基于第t步的条件（$$x_t$$, t）生成 `t` 步的 噪声 $\epsilon_t$
 
 Diffusion **Training**及**Sampling**过程如下所示：
 
