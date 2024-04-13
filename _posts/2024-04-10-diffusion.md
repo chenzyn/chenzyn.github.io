@@ -73,6 +73,8 @@ Training
 >这里我们设 $$\bar{\alpha_t} = \alpha_1 \alpha_2 \alpha_3 ... \alpha_t$$<br>
 >可以得到最终式 $$x_t = \sqrt{\bar{\alpha_t}}x_0 + \sqrt{1-\bar{\alpha_t}}\epsilon$$<br>
 >这个式子意味着我们可以通过给定的$$x_0$$(_原图_) 以及时间步$$t$$ 通过一步计算得到任意时间步的 $$x_t$$(_t步加噪图_).<br>
+>可以看到这个公式就是本文 _training_ 部分的第一张图中红色框住的计算 **Noisy image** 的公式
+
 
 Sampling
 ---
