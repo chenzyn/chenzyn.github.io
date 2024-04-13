@@ -90,3 +90,4 @@ Inference 的过程：
   - sample一个高斯噪声 $$z$$
   - Predict这一步的噪声 $$\epsilon$$
   - 进行去噪操作： $$x_{t-1} = \frac{1}{\sqrt{\alpha_t}}(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha_t}}}\epsilon_{\theta}(x_t, t)) + \sigma_t z$$
++ T 步去噪后最终得到生成的结果 $$x_0$$
