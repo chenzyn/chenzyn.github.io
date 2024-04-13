@@ -78,9 +78,15 @@ Training
 >这个式子意味着我们可以通过给定的$$x_0$$(_原图_) 以及时间步$$t$$ 通过一步计算得到任意时间步的 $$x_t$$(_t步加噪图_).<br>
 >可以看到这个公式就是本文 _training_ 部分的第一张图中红色框住的计算 **Noisy image** 的公式
 
-
 Sampling
 ---
 
 <img src="/images/diffusion_5.png" width="500">
 
+Inference 的过程：
++ 首先从高斯分布中随机Sample一张高斯噪声图
++ t:T->1, 逐步对噪声图进行去噪操作
++ 每步去噪操作
+  - sample一个高斯噪声 $$z$$
+  - Predict这一步的噪声 $$\epsilon$$
+  - 进行去噪操作： $$x_{t-1} = \frac{1}{\sqrt{\alpha_t}}(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha_t}}}\epsilon_{\theta}(x_t, t)) + \sigma_t z$$
