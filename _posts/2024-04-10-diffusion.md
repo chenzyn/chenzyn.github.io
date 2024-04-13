@@ -64,9 +64,12 @@ Training
 
 >答案是**不需要**的，虽然原理上扩散过程是从$$x_0$$开始经过t:0->t的扩散过程一步步扩散得到`t`步的扩散图$$x_t$$，但实际上通过合并扩散过程的公式我们可以发现，得到$$x_t$$并不需要循环一步步加噪，而是可以通过一步计算得到$$x_t$$. <br>
 >我们以 $$x_2$$ 为例， **单步的扩散公式为$$x_t = \sqrt{1-\beta_{t}}x_{t-1} + \sqrt{\beta_t}\epsilon$$其中$$\alpha_t = 1 - \beta_t$$**<br>
->那么有 <br>
-> **$$x_1 = \sqrt{1-\beta_{1}}x_{0} + \sqrt{\beta_1}\epsilon_0$$**  <br>
-> **$$x_2 = \sqrt{1-\beta_{2}}x_{1} + \sqrt{\beta_2}\epsilon_1 $$**  <br>
+>那么有
+
+> **$$x_1 = \sqrt{1-\beta_{1}}x_{0} + \sqrt{\beta_1}\epsilon_0$$**
+
+> **$$x_2 = \sqrt{1-\beta_{2}}x_{1} + \sqrt{\beta_2}\epsilon_1 $$**
+
 >合并可得 $$x_2 = \sqrt{1-\beta_{2}}\sqrt{1-\beta_{1}}x_{0} + \sqrt{1-(1-\beta_2)(1-\beta_1)}\epsilon $$ （_由于噪声来自同一个高斯分布，所以噪声项可以这样合并_）<br>
 ><img src="/images/diffusion_6.png" width="500"><br>
 >同理可得 $$x_t = \sqrt{1-\beta_1}...\sqrt{1-\beta_t}x_0 + \sqrt{1-(1-\beta_1)...(1-\beta_t)}\epsilon$$<br>
