@@ -64,7 +64,7 @@ Training
 
 >答案是**不需要**的，虽然原理上扩散过程是从$$x_0$$开始经过t:0->t的扩散过程一步步扩散得到`t`步的扩散图$$x_t$$，但实际上通过合并扩散过程的公式我们可以发现，得到$$x_t$$并不需要循环一步步加噪，而是可以通过一步计算得到$$x_t$$.
 
->我们以 $$x_2$$ 为例， 单步的扩散公式为$$x_t = \sqrt{1-\beta_{t}}x_{t-1} + \sqrt{\beta_t}\epsilon$$其中$$\alpha_t = 1 - \beta_t$$
+>我们以 $$x_2$$ 为例， **单步的扩散公式为$$x_t = \sqrt{1-\beta_{t}}x_{t-1} + \sqrt{\beta_t}\epsilon$$其中$$\alpha_t = 1 - \beta_t$$**
 
 >那么有
 > <img src="/images/diffusion_6.png" width="500">
