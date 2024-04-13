@@ -20,11 +20,17 @@ DDPM 代码：[github](https://github.com/hojonathanho/diffusion)
 
 
 Diffusion 是一种生成模型，作者受到非平衡热力学的启发设计出了这套模型。
-Diffusion 的整个过程即**加噪再去噪**，以一张图片为例：
+Diffusion 的整个过程即**加噪再去噪**，以一张图片为例，我们先简述diffusion的前向过程：
 - 给定一张图片，我们随机sample一个高斯噪声，按照一定的比例加到原有的图片中，得到一张加噪的图片
-- 重复`T`步加噪的过程
+- 重复`T`步加噪的过程，直到图片变成一张噪声图
 
 <img src="/images/diffusion_3.png" width="500">
+
+***为什么要不断的加噪声呢？***
+Diffusion Model通过这样一个扩散过程逐渐向样本中添加噪声，直至样本被完全破坏，模型通过学习其中每一步扩散过程的噪声大小，实现从被破坏的样本恢复到原有样本的过程，来实现原样本的重建或生成。
+
+Diffusion 的后向过程：
+- 
 
 
 Diffusion **Training**及**Sampling**过程如下所示：
