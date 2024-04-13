@@ -76,6 +76,13 @@ Training
 
 > <img src="/images/diffusion_6.png" width="500">
 
+> 同理可得 $$x_t = \sqrt{1-\beta_1}...\sqrt{1-\beta_t}x_0 + \sqrt{1-(1-\beta_1)...(1-\beta_t)}\epsilon$$
+
+> 这里我们设 $$\bar{\alpha_t} = \alpha_1 \alpha_2 \alpha_3 ... \alpha_t$$
+
+> 可以得到最终式 $$x_t = \sqrt{\bar{\alpha_t}}x_0 + \sqrt{1-\bar{\alpha_t}}\epsilon$$
+
+> 这个式子意味着我们可以通过给定的$$x_0$$(_原图_) 以及时间步$$t$$ 通过一步计算得到任意时间步的 $$x_t$$.
 
 
 Sampling
