@@ -72,8 +72,9 @@ Training
 
 > $$x_2 = \sqrt{1-\beta_{2}}x_{1} + \sqrt{\beta_2}\epsilon_1 $$
 
-> <img src="/images/diffusion_6.png" width="500">
+> 合并可得 $$x_2 = \sqrt{1-\beta_{2}}\sqrt{1-\beta_{1}}x_{0} + \sqrt{1-(1-\beta_2)(1-\beta_1)}\epsilon $$ （_由于噪声来自同一个高斯分布，所以噪声项可以这样合并_）
 
+> <img src="/images/diffusion_6.png" width="500">
 
 
 
