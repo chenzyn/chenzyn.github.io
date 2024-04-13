@@ -63,27 +63,16 @@ Training
 ### 那么问题来了，假设我sample到`t==5`步，我是否需要从`t==0`开始加噪声，循环`5`步得到$$x_5$$?
 
 >答案是**不需要**的，虽然原理上扩散过程是从$$x_0$$开始经过t:0->t的扩散过程一步步扩散得到`t`步的扩散图$$x_t$$，但实际上通过合并扩散过程的公式我们可以发现，得到$$x_t$$并不需要循环一步步加噪，而是可以通过一步计算得到$$x_t$$. 
-
 我们以 $$x_2$$ 为例， **单步的扩散公式为$$x_t = \sqrt{1-\beta_{t}}x_{t-1} + \sqrt{\beta_t}\epsilon$$其中$$\alpha_t = 1 - \beta_t$$**
-
 那么有 
-
 $$x_1 = \sqrt{1-\beta_{1}}x_{0} + \sqrt{\beta_1}\epsilon_0$$
-
-> $$x_2 = \sqrt{1-\beta_{2}}x_{1} + \sqrt{\beta_2}\epsilon_1 $$
-
-> 合并可得 $$x_2 = \sqrt{1-\beta_{2}}\sqrt{1-\beta_{1}}x_{0} + \sqrt{1-(1-\beta_2)(1-\beta_1)}\epsilon $$ （_由于噪声来自同一个高斯分布，所以噪声项可以这样合并_）
-
-> <img src="/images/diffusion_6.png" width="500">
-
-> 同理可得 $$x_t = \sqrt{1-\beta_1}...\sqrt{1-\beta_t}x_0 + \sqrt{1-(1-\beta_1)...(1-\beta_t)}\epsilon$$
-
-> 这里我们设 $$\bar{\alpha_t} = \alpha_1 \alpha_2 \alpha_3 ... \alpha_t$$
-
-> 可以得到最终式 $$x_t = \sqrt{\bar{\alpha_t}}x_0 + \sqrt{1-\bar{\alpha_t}}\epsilon$$
-
-> 这个式子意味着我们可以通过给定的$$x_0$$(_原图_) 以及时间步$$t$$ 通过一步计算得到任意时间步的 $$x_t$$(_t步加噪图_).
-
+$$x_2 = \sqrt{1-\beta_{2}}x_{1} + \sqrt{\beta_2}\epsilon_1 $$
+合并可得 $$x_2 = \sqrt{1-\beta_{2}}\sqrt{1-\beta_{1}}x_{0} + \sqrt{1-(1-\beta_2)(1-\beta_1)}\epsilon $$ （_由于噪声来自同一个高斯分布，所以噪声项可以这样合并_）
+<img src="/images/diffusion_6.png" width="500">
+同理可得 $$x_t = \sqrt{1-\beta_1}...\sqrt{1-\beta_t}x_0 + \sqrt{1-(1-\beta_1)...(1-\beta_t)}\epsilon$$
+这里我们设 $$\bar{\alpha_t} = \alpha_1 \alpha_2 \alpha_3 ... \alpha_t$$
+可以得到最终式 $$x_t = \sqrt{\bar{\alpha_t}}x_0 + \sqrt{1-\bar{\alpha_t}}\epsilon$$
+这个式子意味着我们可以通过给定的$$x_0$$(_原图_) 以及时间步$$t$$ 通过一步计算得到任意时间步的 $$x_t$$(_t步加噪图_).
 
 Sampling
 ---
