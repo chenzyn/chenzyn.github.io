@@ -66,7 +66,12 @@ Training
 
 >我们以 $$x_2$$ 为例， **单步的扩散公式为$$x_t = \sqrt{1-\beta_{t}}x_{t-1} + \sqrt{\beta_t}\epsilon$$其中$$\alpha_t = 1 - \beta_t$$**
 
->那么有
+>那么有 
+
+> $$x_1 = \sqrt{1-\beta_{1}}x_{0} + \sqrt{\beta_1}\epsilon_0$$
+
+> $$x_2 = \sqrt{1-\beta_{2}}x_{1} + \sqrt{\beta_2}\epsilon_1 $$
+
 > <img src="/images/diffusion_6.png" width="500">
 
 
