@@ -91,5 +91,7 @@ Inference 的过程：
   - 进行去噪操作： $$x_{t-1} = \frac{1}{\sqrt{\alpha_t}}(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha_t}}}\epsilon_{\theta}(x_t, t)) + \sigma_t z$$
 + T 步去噪后最终得到生成的结果 $$x_0$$
 
-### 那么问题又来了，去噪过程的公式是怎么得来的呢？
+### 那么问题又来了，单步去噪操作的公式是怎么得来的呢？
+
+_待更新..._
 
