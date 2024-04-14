@@ -8,16 +8,15 @@ tags:
   - DDPM
 ---
 
-
-Overview
-===
-
 DDPM 原文：[arxiv](https://arxiv.org/pdf/2006.11239.pdf)
 
 DDPM 代码：[github](https://github.com/hojonathanho/diffusion)
 
 图源 李宏毅老师课程：[https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
 
+
+Overview
+===
 
 Diffusion 是一种生成模型，作者受到非平衡热力学的启发设计出了这套模型。
 Diffusion 的整个过程即**加噪再去噪**，以一张图片为例，我们先简述diffusion的**前向过程**：
