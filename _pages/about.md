@@ -14,8 +14,8 @@ redirect_from:
 
 Educational Background
 ---
-- 2023.9~Now: Master Student of the School of Software & Microelectronics, Peking University.
 - 2023.7~Now: Research Assistant, Center on Frontiers of Computing Studies, Peking University.
+- 2023.9~Now: Master Student of the School of Software & Microelectronics, Peking University.
 
 
 My work and reasearch
