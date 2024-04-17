@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About"
+title: "About Me"
 author_profile: true
 redirect_from: 
   - /about/
@@ -12,11 +12,15 @@ redirect_from:
 <br>
 <br>
 
-My work and reasearch
-=======
+Educational Background
+---
 
-Mapping [AnyGrasp](https://github.com/graspnet/anygrasp_sdk) para-gripper grasp pose to dexterous hand.
--------
+
+My work and reasearch
+===
+
+- Mapping [AnyGrasp](https://github.com/graspnet/anygrasp_sdk) para-gripper grasp pose to dexterous hand.
+
 
 <div style="display: flex; justify-content: center; align-items: center; height: 400px;">
   <video width="240" height="400" controls preload="auto">
@@ -25,8 +29,8 @@ Mapping [AnyGrasp](https://github.com/graspnet/anygrasp_sdk) para-gripper grasp 
   </video>
 </div>
 
-Real-world experiment of functional pre-grasp manipulation.
--------
+- Real-world experiment of functional pre-grasp manipulation.
+
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
   <div style="flex-basis: calc(33.33% - 10px); margin: 5px;">
@@ -50,12 +54,12 @@ Real-world experiment of functional pre-grasp manipulation.
 </div>
 
 
-ShadowHand rendering.
--------
+- ShadowHand rendering.
+
 ![](/images/shadowhand_render.png)
 
-Grasping in confined clutter
--------
+- Grasping in confined clutter
+
 
 Coming soon.
 
