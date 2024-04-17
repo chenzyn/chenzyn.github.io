@@ -61,7 +61,5 @@ My work and reasearch
 ![](/images/shadowhand_render.png)
 
 - Grasping in confined clutter
-
-
-Coming soon.
+  + Coming soon.
 
