@@ -12,6 +12,7 @@ redirect_from:
 
 Educational Background
 ---
+- 2019.9~2023.6: Bachelor student of the **Life science and Engineering College of Northest Minzu University**.
 - 2023.7~Now: Research Assistant, **Center on Frontiers of Computing Studies**, PKU.
 - 2023.9~Now: Master Student of the **School of Software & Microelectronics**, PKU.
 
