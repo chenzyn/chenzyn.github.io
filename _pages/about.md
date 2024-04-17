@@ -9,8 +9,6 @@ redirect_from:
 
   I'm Zeyuan Chen, a first-year Master student at [School of Software and Microelectronics](https://www.ss.pku.edu.cn/?view=featured), Peking University. I am also a research intern at [Center On Frontiers of Computing Studies](https://cfcs.pku.edu.cn), Peking University. I work on **robotics** and **embodied AI**.
 
-<br>
-<br>
 
 Educational Background
 ---
