@@ -41,4 +41,24 @@ tags:
 他们在模拟环境和真机环境下都做了测试。
 
 **模拟环境**：
-选用的baseline是[GPD](https://arxiv.org/pdf/1706.09911)，
+
+选用的baseline是[GPD](https://arxiv.org/pdf/1706.09911)，表中可以看出PointNetGPD在更少的参数量下无论是单视角点云还是多视角点云，都能比baseline得到更高的准确率.
+
+**真机实验**：
+
+真机实验在两种setting下做的，一个是 isolation 一个是 clutter.
+
+用的机器人是 UR5 + Robotiq 3-finger gripper (pinch mode 只有两个手指能动，且只能在一个维度上运动， 相当于Para gripper).
+
+模型输入为单视角点云 (from Kinect2 depth sensor).
+
+构建isolation：选用了YCB物体集中的22个物体，其中11个在训练集中，另外11个是模型没见过的.
+
+构建clutter：选用了22个物体中的16个物体，在这16个物体中构建2个物体的物体集合来搭clutter.
+
+整套系统用ROS来通信，使用MoveIt!框架中的BioIK来求解机械臂的逆运动学.
+
+
+
+
+
