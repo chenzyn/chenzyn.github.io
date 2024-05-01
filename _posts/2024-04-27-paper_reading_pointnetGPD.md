@@ -44,6 +44,8 @@ tags:
 
 选用的baseline是[GPD](https://arxiv.org/pdf/1706.09911)，表中可以看出PointNetGPD在更少的参数量下无论是单视角点云还是多视角点云，都能比baseline得到更高的准确率.
 
+![模拟结果](/images/2024-05-01-3.png)
+
 **真机实验**：
 
 真机实验在两种setting下做的，一个是 isolation 一个是 clutter.
@@ -58,6 +60,19 @@ tags:
 
 整套系统用ROS来通信，使用MoveIt!框架中的BioIK来求解机械臂的逆运动学.
 
+结果如下 
+
+![真机结果](/images/2024-05-01-1.png)
+
+![真机结果](/images/2024-05-01-2.png)
+
+> 我们测试对每个物体做了 10 轮测试，每次测试都给予物体随机的旋转，如果gripper没有抓起物体或者5分钟内都没有生成符合要求的无碰撞抓取，我们就认为这轮测试是失败的。
+
+> **Success rate** : 成功抓取的百分比
+
+> **Completion rate** : clutter中被抓走物体数量所占比例
+
+在clutter环境下，PointNetGPD 3-class 达到了最好的效果。
 
 
 
