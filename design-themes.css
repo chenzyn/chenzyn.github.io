@@ -1,0 +1,210 @@
+html[data-theme="classic"] body,
+html[data-theme="clean"] body,
+html[data-theme="compact"] body {
+  color: #202124;
+  background: #fff;
+}
+
+html[data-theme="classic"] body > table,
+html[data-theme="clean"] body > table,
+html[data-theme="compact"] body > table {
+  max-width: 1040px !important;
+}
+
+html[data-theme="classic"] h2,
+html[data-theme="clean"] h2,
+html[data-theme="compact"] h2 {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+html[data-theme="classic"] .papertitle,
+html[data-theme="clean"] .papertitle,
+html[data-theme="compact"] .papertitle {
+  font-size: 17px;
+  line-height: 1.22;
+}
+
+html[data-theme="classic"] .project-item > td:first-child,
+html[data-theme="clean"] .project-item > td:first-child,
+html[data-theme="compact"] .project-item > td:first-child {
+  vertical-align: top !important;
+}
+
+html[data-theme="classic"] .project-item .one,
+html[data-theme="clean"] .project-item .one,
+html[data-theme="compact"] .project-item .one {
+  border-radius: 4px;
+  background: transparent;
+}
+
+html[data-theme="classic"] .project-item .one img.contain-img,
+html[data-theme="clean"] .project-item .one img.contain-img,
+html[data-theme="compact"] .project-item .one img.contain-img {
+  object-fit: contain;
+}
+
+html[data-theme="classic"] a,
+html[data-theme="clean"] a,
+html[data-theme="compact"] a {
+  color: #1d63b7;
+}
+
+html[data-theme="classic"] a:hover,
+html[data-theme="clean"] a:hover,
+html[data-theme="compact"] a:hover {
+  color: #b35c14;
+}
+
+/* Option 1: close to Jon Barron / Siyuan Huang, balanced and academic. */
+html[data-theme="classic"] .project-item > td:first-child {
+  width: 30% !important;
+  padding: 13px 18px 13px 10px !important;
+}
+
+html[data-theme="classic"] .project-item > td:nth-child(2) {
+  width: 70% !important;
+  padding: 11px 10px 11px 12px !important;
+  line-height: 1.28;
+}
+
+html[data-theme="classic"] .project-item .one {
+  max-width: 260px;
+  aspect-ratio: 16 / 9;
+}
+
+html[data-theme="classic"] .project-item + .project-item,
+html[data-theme="classic"] table:has(.project-item) {
+  margin-top: 2px;
+}
+
+html[data-theme="classic"] .project-item p {
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: #404040;
+}
+
+/* Option 2: cleaner rows with slightly larger visuals and soft dividers. */
+html[data-theme="clean"] body {
+  background: #fbfbfa;
+}
+
+html[data-theme="clean"] body > table {
+  background: #fff;
+}
+
+html[data-theme="clean"] h2 {
+  border-bottom: 1px solid #e4e4e1;
+  padding-bottom: 7px;
+}
+
+html[data-theme="clean"] ul {
+  padding-left: 22px;
+}
+
+html[data-theme="clean"] .project-item > td:first-child {
+  width: 33% !important;
+  padding: 16px 18px 16px 12px !important;
+}
+
+html[data-theme="clean"] .project-item > td:nth-child(2) {
+  width: 67% !important;
+  padding: 15px 12px 15px 12px !important;
+  line-height: 1.32;
+  border-bottom: 1px solid #ececea;
+}
+
+html[data-theme="clean"] .project-item .one {
+  max-width: 300px;
+  aspect-ratio: 16 / 10;
+}
+
+html[data-theme="clean"] .project-item .one img,
+html[data-theme="clean"] .project-item .one video {
+  border-radius: 4px;
+}
+
+html[data-theme="clean"] .project-item p {
+  margin-top: 9px;
+  margin-bottom: 0;
+  color: #3f454b;
+}
+
+html[data-theme="clean"] em b {
+  color: #111;
+}
+
+/* Option 3: compact, more like a dense publication index. */
+html[data-theme="compact"] body,
+html[data-theme="compact"] td,
+html[data-theme="compact"] p,
+html[data-theme="compact"] a,
+html[data-theme="compact"] strong {
+  font-size: 15px;
+}
+
+html[data-theme="compact"] .name {
+  font-size: 27px;
+}
+
+html[data-theme="compact"] h2 {
+  font-size: 20px;
+}
+
+html[data-theme="compact"] .papertitle {
+  font-size: 16px;
+}
+
+html[data-theme="compact"] .project-item > td:first-child {
+  width: 24% !important;
+  padding: 8px 13px 8px 10px !important;
+}
+
+html[data-theme="compact"] .project-item > td:nth-child(2) {
+  width: 76% !important;
+  padding: 7px 10px 7px 8px !important;
+  line-height: 1.2;
+}
+
+html[data-theme="compact"] .project-item .one {
+  max-width: 210px;
+  aspect-ratio: 16 / 9;
+}
+
+html[data-theme="compact"] .project-item p {
+  margin-top: 6px;
+  margin-bottom: 0;
+  color: #4b4b4b;
+}
+
+html[data-theme="compact"] .project-item br + br {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  html[data-theme="classic"] .project-item,
+  html[data-theme="clean"] .project-item,
+  html[data-theme="compact"] .project-item,
+  html[data-theme="classic"] .project-item > td,
+  html[data-theme="clean"] .project-item > td,
+  html[data-theme="compact"] .project-item > td {
+    display: block;
+    width: 100% !important;
+  }
+
+  html[data-theme="classic"] .project-item > td:first-child,
+  html[data-theme="clean"] .project-item > td:first-child,
+  html[data-theme="compact"] .project-item > td:first-child,
+  html[data-theme="classic"] .project-item > td:nth-child(2),
+  html[data-theme="clean"] .project-item > td:nth-child(2),
+  html[data-theme="compact"] .project-item > td:nth-child(2) {
+    padding: 8px 10px !important;
+  }
+
+  html[data-theme="classic"] .project-item .one,
+  html[data-theme="clean"] .project-item .one,
+  html[data-theme="compact"] .project-item .one {
+    max-width: none;
+  }
+}
