@@ -128,7 +128,6 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--bg);
-  border-top: 3px solid var(--accent);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
