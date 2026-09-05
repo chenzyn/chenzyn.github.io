@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Homepage layout probe</title>
+    <style>
+      iframe {
+        position: absolute;
+        left: -10000px;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="desktop" data-src="../index.html" width="1200" height="1200"></iframe>
+    <iframe id="above-breakpoint" data-src="../index.html" width="761" height="1200"></iframe>
+    <iframe id="at-breakpoint" data-src="../index.html" width="760" height="1200"></iframe>
+    <iframe id="mobile" data-src="../index.html" width="390" height="1200"></iframe>
+    <pre id="result"></pre>
+    <script>
+      function reportError(error) {
+        document.getElementById('result').textContent = JSON.stringify({
+          error: error.message || String(error)
+        });
+      }
+
+      window.addEventListener('error', (event) => reportError(event.error || event.message));
+      window.addEventListener('unhandledrejection', (event) => reportError(event.reason));
+
+      function rectFor(element) {
+        const rect = element.getBoundingClientRect();
+        return {
+          top: rect.top,
+          right: rect.right,
+          bottom: rect.bottom,
+          left: rect.left
+        };
+      }
+
+      function observe(frameId) {
+        const frame = document.getElementById(frameId);
+        return new Promise((resolve) => {
+          function measureWhenReady() {
+            const document = frame.contentDocument;
+            const cards = document.querySelectorAll('.project-item');
+            const documentParsed = document.readyState !== 'loading';
+            const stylesApplied = documentParsed && cards.length > 1 &&
+              document.defaultView.getComputedStyle(cards[0]).display === 'grid';
+
+            if (!stylesApplied) {
+              setTimeout(measureWhenReady, 25);
+              return;
+            }
+
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+              resolve({
+                viewportWidth: document.documentElement.clientWidth,
+                scrollWidth: document.documentElement.scrollWidth,
+                cards: Array.from(cards, (card, index) => {
+                  const cells = card.querySelectorAll(':scope > td');
+                  if (cells.length !== 2) {
+                    throw new Error(
+                      `Publication ${index + 1} has ${cells.length} direct table cells`
+                    );
+                  }
+                  return {
+                    card: rectFor(card),
+                    media: rectFor(cells[0]),
+                    details: rectFor(cells[1])
+                  };
+                })
+              });
+            }));
+          }
+
+          frame.src = frame.dataset.src;
+          measureWhenReady();
+        });
+      }
+
+      Promise.all([
+        observe('desktop'),
+        observe('above-breakpoint'),
+        observe('at-breakpoint'),
+        observe('mobile')
+      ]).then(([desktop, aboveBreakpoint, atBreakpoint, mobile]) => {
+        document.getElementById('result').textContent = JSON.stringify({
+          desktop,
+          aboveBreakpoint,
+          atBreakpoint,
+          mobile
+        });
+        document.documentElement.dataset.ready = 'true';
+      });
+    </script>
+  </body>
+</html>
