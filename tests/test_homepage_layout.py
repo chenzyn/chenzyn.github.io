@@ -118,16 +118,16 @@ class HomepageLayoutTest(unittest.TestCase):
             self.assertEqual(len(colors), 2)
             self.assertTrue(all(color == "rgb(249, 3, 3)" for color in colors), colors)
 
-    def test_desktop_places_media_left_of_details(self):
+    def test_desktop_places_media_right_of_details(self):
         for viewport in ("desktop", "aboveBreakpoint"):
             for card in self.layout[viewport]["cards"]:
-                self.assertLessEqual(card["media"]["right"], card["details"]["left"])
+                self.assertLessEqual(card["details"]["right"], card["media"]["left"])
 
-    def test_mobile_places_media_above_details(self):
+    def test_mobile_places_media_below_details(self):
         for viewport in ("mobile", "atBreakpoint"):
             self.assert_one_column(self.layout[viewport])
             for card in self.layout[viewport]["cards"]:
-                self.assertLessEqual(card["media"]["bottom"], card["details"]["top"])
+                self.assertLessEqual(card["details"]["bottom"], card["media"]["top"])
 
 
 if __name__ == "__main__":

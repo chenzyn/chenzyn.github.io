@@ -33,10 +33,10 @@ class HomepageParser(HTMLParser):
         elif tag == "li" and self.section_heading == "News":
             self._news_parts = []
 
-        if tag == "tr" and "project-item" in classes:
+        if tag == "article" and "paper" in classes:
             self._publication = {"text_parts": [], "links": []}
         elif self._publication is not None:
-            if tag == "span" and "papertitle" in classes:
+            if tag == "h3":
                 self._title_parts = []
             elif tag == "a":
                 self._link = {"href": attributes.get("href"), "text_parts": []}
@@ -69,10 +69,10 @@ class HomepageParser(HTMLParser):
                 (normalize(self._link["text_parts"]), self._link["href"])
             )
             self._link = None
-        elif tag == "span" and self._title_parts is not None:
+        elif tag == "h3" and self._title_parts is not None:
             self._publication["title"] = normalize(self._title_parts)
             self._title_parts = None
-        elif tag == "tr":
+        elif tag == "article":
             self._publication["text"] = normalize(self._publication.pop("text_parts"))
             self.publications.append(self._publication)
             self._publication = None

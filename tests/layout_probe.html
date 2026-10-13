@@ -42,7 +42,7 @@
         return new Promise((resolve) => {
           function measureWhenReady() {
             const document = frame.contentDocument;
-            const cards = document.querySelectorAll('.project-item');
+            const cards = document.querySelectorAll('.paper');
             const documentParsed = document.readyState !== 'loading';
             const stylesApplied = documentParsed && cards.length > 1 &&
               document.defaultView.getComputedStyle(cards[0]).display === 'grid';
@@ -56,20 +56,14 @@
               resolve({
                 viewportWidth: document.documentElement.clientWidth,
                 scrollWidth: document.documentElement.scrollWidth,
-                oralColors: Array.from(document.querySelectorAll('.project-item b'))
+                oralColors: Array.from(document.querySelectorAll('.paper b'))
                   .filter((element) => element.textContent.trim() === '(Oral)')
                   .map((element) => document.defaultView.getComputedStyle(element).color),
                 cards: Array.from(cards, (card, index) => {
-                  const cells = card.querySelectorAll(':scope > td');
-                  if (cells.length !== 2) {
-                    throw new Error(
-                      `Publication ${index + 1} has ${cells.length} direct table cells`
-                    );
-                  }
                   return {
                     card: rectFor(card),
-                    media: rectFor(cells[0]),
-                    details: rectFor(cells[1])
+                    media: rectFor(card.querySelector('figure')),
+                    details: rectFor(card.querySelector('.paper-details'))
                   };
                 })
               });
