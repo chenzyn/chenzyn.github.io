@@ -118,7 +118,7 @@ class HomepageContentTest(unittest.TestCase):
     def test_news_leads_with_three_corl_2026_acceptances(self):
         self.assertEqual(
             self.parser.news_items[0],
-            "[2026/09] 🎉 Three papers were accepted to CoRL 2026.",
+            "[2026/09] 🎉 Three papers were accepted to CoRL 2026, with OpenDexGrasp selected for an Oral presentation (one of 21 oral presentations among 687 accepted papers, selected from 2,094 submissions).",
         )
 
     def test_yingying_wu_has_profile_link_in_each_authored_paper(self):

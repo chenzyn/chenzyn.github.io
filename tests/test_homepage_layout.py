@@ -88,27 +88,11 @@ class HomepageLayoutTest(unittest.TestCase):
         if "error" in cls.layout:
             raise AssertionError(f"Layout probe failed: {cls.layout['error']}")
 
-    def assert_two_columns(self, layout):
-        cards = layout["cards"]
-        for index in range(0, len(cards) - 1, 2):
-            with self.subTest(row=index // 2 + 1):
-                left = cards[index]["card"]
-                right = cards[index + 1]["card"]
-                self.assertAlmostEqual(left["top"], right["top"], delta=2)
-                self.assertGreater(right["left"], left["right"])
-
-        for index in range(2, len(cards), 2):
-            with self.subTest(row=index // 2 + 1):
-                self.assertGreaterEqual(
-                    cards[index]["card"]["top"],
-                    cards[index - 2]["card"]["bottom"],
-                )
-
     def assert_one_column(self, layout):
         cards = layout["cards"]
         for index, card in enumerate(cards):
             with self.subTest(card=index + 1):
-                self.assertAlmostEqual(card["card"]["left"], 0, delta=2)
+                self.assertAlmostEqual(card["card"]["left"], cards[0]["card"]["left"], delta=2)
                 self.assertLessEqual(card["card"]["right"], layout["viewportWidth"])
 
         for index in range(1, len(cards)):
@@ -118,8 +102,8 @@ class HomepageLayoutTest(unittest.TestCase):
                     cards[index - 1]["card"]["bottom"],
                 )
 
-    def test_all_publications_fill_two_column_rows_on_desktop(self):
-        self.assert_two_columns(self.layout["desktop"])
+    def test_all_publications_stack_on_desktop(self):
+        self.assert_one_column(self.layout["desktop"])
 
     def test_all_publications_stack_on_mobile(self):
         self.assert_one_column(self.layout["mobile"])
@@ -128,15 +112,22 @@ class HomepageLayoutTest(unittest.TestCase):
         mobile = self.layout["mobile"]
         self.assertEqual(mobile["scrollWidth"], mobile["viewportWidth"])
 
-    def test_every_card_places_media_above_details(self):
+    def test_publication_oral_labels_render_red(self):
         for viewport in ("desktop", "mobile"):
-            for index, card in enumerate(self.layout[viewport]["cards"]):
-                with self.subTest(viewport=viewport, card=index + 1):
-                    self.assertLessEqual(card["media"]["bottom"], card["details"]["top"])
+            colors = self.layout[viewport]["oralColors"]
+            self.assertEqual(len(colors), 2)
+            self.assertTrue(all(color == "rgb(249, 3, 3)" for color in colors), colors)
 
-    def test_layout_switches_to_one_column_at_760_pixels(self):
-        self.assert_two_columns(self.layout["aboveBreakpoint"])
-        self.assert_one_column(self.layout["atBreakpoint"])
+    def test_desktop_places_media_left_of_details(self):
+        for viewport in ("desktop", "aboveBreakpoint"):
+            for card in self.layout[viewport]["cards"]:
+                self.assertLessEqual(card["media"]["right"], card["details"]["left"])
+
+    def test_mobile_places_media_above_details(self):
+        for viewport in ("mobile", "atBreakpoint"):
+            self.assert_one_column(self.layout[viewport])
+            for card in self.layout[viewport]["cards"]:
+                self.assertLessEqual(card["media"]["bottom"], card["details"]["top"])
 
 
 if __name__ == "__main__":

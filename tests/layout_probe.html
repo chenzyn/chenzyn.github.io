@@ -56,6 +56,9 @@
               resolve({
                 viewportWidth: document.documentElement.clientWidth,
                 scrollWidth: document.documentElement.scrollWidth,
+                oralColors: Array.from(document.querySelectorAll('.project-item b'))
+                  .filter((element) => element.textContent.trim() === '(Oral)')
+                  .map((element) => document.defaultView.getComputedStyle(element).color),
                 cards: Array.from(cards, (card, index) => {
                   const cells = card.querySelectorAll(':scope > td');
                   if (cells.length !== 2) {
