@@ -125,3 +125,24 @@ footer{border-top:1px solid var(--rule,#ddd);padding-top:20px;margin-top:40px;co
 .section-heading{margin-top:32px}
 
 }
+
+/* Give the recruiting invitation a clear visual anchor within the biography. */
+.bio .hiring-notice {
+  margin: 22px 0 0;
+  padding: 15px 18px;
+  border-left: 3px solid #245d91;
+  border-radius: 0 5px 5px 0;
+  background: #edf4fa;
+  color: #243d52;
+  line-height: 1.75;
+}
+.hiring-notice > strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #245d91;
+  font-size: 16px;
+  font-weight: 700;
+}
+.hiring-notice a {
+  font-weight: 600;
+}
