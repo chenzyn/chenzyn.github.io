@@ -91,14 +91,15 @@ class HomepageContentTest(unittest.TestCase):
             if publication.get("title") == title
         )
 
-    def test_corl_2026_papers_lead_publications_in_requested_order(self):
+    def test_publications_start_in_requested_order(self):
         expected_titles = [
             "TeleDexter: Towards Human-level Dexterous Teleoperation",
+            "DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation",
             "ArtManip: Category-Level Articulated In-Hand Manipulation",
             "OpenDexGrasp: Open-vocabulary Task-Oriented Dexterous Grasping",
         ]
         actual_titles = [
-            publication.get("title") for publication in self.parser.publications[:3]
+            publication.get("title") for publication in self.parser.publications[:4]
         ]
         self.assertEqual(actual_titles, expected_titles)
 
